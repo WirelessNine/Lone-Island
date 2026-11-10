@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://gwtladya383k" path="res://scenes/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://4082vk2j8pn" path="res://assets/characters.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://det60erbpe3nc" path="res://assets/circle_light.png" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -120,3 +121,10 @@ drag_top_margin = 0.05
 drag_right_margin = 0.03
 drag_bottom_margin = 0.05
 editor_draw_drag_margin = true
+
+[node name="SmellyAura" type="PointLight2D" parent="." unique_id=1911324896]
+blend_mode = 2
+shadow_enabled = true
+texture = ExtResource("3_qhqgy")
+texture_scale = 2.0
+metadata/_edit_lock_ = true

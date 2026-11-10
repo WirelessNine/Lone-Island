@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ca0ssh78erg8d" path="res://scenes/ground_item.gd" id="1_oe8gi"]
 [ext_resource type="Texture2D" uid="uid://8m3oak8yimmf" path="res://resources/atlases/wood.tres" id="1_sxkc3"]
+[ext_resource type="Texture2D" uid="uid://det60erbpe3nc" path="res://assets/circle_light.png" id="3_m7nn2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 27.018513
@@ -14,6 +15,11 @@ script = ExtResource("1_oe8gi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup" unique_id=377891046]
 shape = SubResource("CircleShape2D_g2els")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1463369728]
+energy = 0.5
+texture = ExtResource("3_m7nn2")
+texture_scale = 0.6
 
 [connection signal="body_entered" from="Pickup" to="." method="_on_pickup_body_entered"]
 [connection signal="body_exited" from="Pickup" to="." method="_on_pickup_body_exited"]
