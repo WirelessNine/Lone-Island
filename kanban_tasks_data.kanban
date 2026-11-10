@@ -30,6 +30,7 @@
 			"uuid": "18262224-b4ac-484c-a3ea-8a4f77343553",
 			"title": "Done",
 			"tasks": [
+				"1b5d416f-a821-49d1-b174-8098ec4a7df5",
 				"8c0780a5-6dd2-4322-a93a-ead896de8194",
 				"1249f65a-37b7-475c-b2fe-e53b5c50dff5",
 				"fc35cc4d-3a9e-4b43-86f8-e6b27a619f70"
@@ -110,6 +111,13 @@
 		{
 			"uuid": "cd429cde-bbc4-409e-8d7b-3f26ab6898f7",
 			"title": "Credit Urizen",
+			"description": "",
+			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
+			"steps": []
+		},
+		{
+			"uuid": "1b5d416f-a821-49d1-b174-8098ec4a7df5",
+			"title": "Add pickable items",
 			"description": "",
 			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
 			"steps": []

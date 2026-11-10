@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://cmxy1j4lb3ly0"]
 
-[ext_resource type="Texture2D" uid="uid://dghwkio3jk11x" path="res://resources/decor_atlas.tres" id="1_k4pvx"]
+[ext_resource type="Texture2D" uid="uid://dghwkio3jk11x" path="res://resources/atlases/decor_atlas.tres" id="1_k4pvx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thvod"]
 texture = ExtResource("1_k4pvx")
@@ -39,10 +39,8 @@ use_texture_padding = false
 4:1/0 = 0
 4:1/0/z_index = -1
 0:2/0 = 0
-0:2/0/z_index = -1
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, 0, 6, 0, 6, 6, -6, 6)
 1:2/0 = 0
-1:2/0/z_index = -1
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, 0, 6, 0, 6, 6, -6, 6)
 
 [resource]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d1sqa2uuicegy"]
+
+[ext_resource type="Script" uid="uid://ca0ssh78erg8d" path="res://scenes/ground_item.gd" id="1_oe8gi"]
+[ext_resource type="Texture2D" uid="uid://8m3oak8yimmf" path="res://resources/atlases/wood.tres" id="1_sxkc3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 27.018513
+
+[node name="GroundItem" type="Sprite2D" unique_id=2072517468]
+texture = ExtResource("1_sxkc3")
+script = ExtResource("1_oe8gi")
+
+[node name="Pickup" type="Area2D" parent="." unique_id=21742547]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup" unique_id=377891046]
+shape = SubResource("CircleShape2D_g2els")
+
+[connection signal="body_entered" from="Pickup" to="." method="_on_pickup_body_entered"]
+[connection signal="body_exited" from="Pickup" to="." method="_on_pickup_body_exited"]

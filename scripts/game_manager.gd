@@ -1,6 +1,8 @@
 extends Node
 
 signal items_changed
+signal pickup_entered
+signal pickup_exited
 
 enum Item {
 	WOOD,
