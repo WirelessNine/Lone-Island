@@ -11,26 +11,28 @@
 			"uuid": "39aafb57-7a06-4836-82fa-06a9dfd89cf8",
 			"title": "Todo",
 			"tasks": [
-				"1249f65a-37b7-475c-b2fe-e53b5c50dff5",
-				"8c0780a5-6dd2-4322-a93a-ead896de8194",
 				"1723e9e6-8340-48fc-bca4-b04468409014",
 				"bb6a33fb-25d9-4330-bfb9-de543c517649",
 				"c04be79e-f612-4df9-a838-7645308d215a",
 				"963166c2-3600-4370-937c-a99e83309738",
 				"50937b29-49e0-4f55-a914-da2943bb8ef8",
 				"843bb290-dd98-4208-a0af-55ee6c9c5545",
-				"5e98b8a8-1726-4a22-b7a2-e36c73bd1699"
+				"5e98b8a8-1726-4a22-b7a2-e36c73bd1699",
+				"cd429cde-bbc4-409e-8d7b-3f26ab6898f7"
 			]
 		},
 		{
 			"uuid": "d3259da6-8c7b-4961-b7f0-1b14335257cf",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"8c0780a5-6dd2-4322-a93a-ead896de8194"
+			]
 		},
 		{
 			"uuid": "18262224-b4ac-484c-a3ea-8a4f77343553",
 			"title": "Done",
 			"tasks": [
+				"1249f65a-37b7-475c-b2fe-e53b5c50dff5",
 				"fc35cc4d-3a9e-4b43-86f8-e6b27a619f70"
 			]
 		}
@@ -102,6 +104,13 @@
 		{
 			"uuid": "5e98b8a8-1726-4a22-b7a2-e36c73bd1699",
 			"title": "Add day night cycle",
+			"description": "",
+			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
+			"steps": []
+		},
+		{
+			"uuid": "cd429cde-bbc4-409e-8d7b-3f26ab6898f7",
+			"title": "Credit Urizen",
 			"description": "",
 			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
 			"steps": []

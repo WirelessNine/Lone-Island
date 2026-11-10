@@ -95,15 +95,17 @@ animations = [{
 radius = 3.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2088543346]
+y_sort_enabled = true
 motion_mode = 1
 script = ExtResource("1_3vyb7")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=103653886]
 unique_name_in_owner = true
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_as85p")
 animation = &"sprint"
 autoplay = "idle"
-frame_progress = 0.97859454
+frame_progress = 0.17924136
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=883539957]
 position = Vector2(0, 3)
@@ -111,3 +113,10 @@ shape = SubResource("CircleShape2D_as85p")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=950497043]
 process_callback = 0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.03
+drag_top_margin = 0.05
+drag_right_margin = 0.03
+drag_bottom_margin = 0.05
+editor_draw_drag_margin = true

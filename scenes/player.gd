@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const WALK_SPEED: float = 90.0
-const SPRINT_SPEED: float = 130.0
+const WALK_SPEED: float = 70.0
+const SPRINT_SPEED: float = 90.0
 
 @onready var sprite: AnimatedSprite2D = %Sprite
 

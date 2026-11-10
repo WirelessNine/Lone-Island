@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ba1wcbw1iy003"]
+
+[ext_resource type="Shader" uid="uid://bslw5x7uqj772" path="res://resources/shaders/crt.gdshader" id="1_fjm4b"]
+
+[resource]
+shader = ExtResource("1_fjm4b")
+shader_parameter/scanlines_1 = 500.0
+shader_parameter/scanlines_2 = 25.0
+shader_parameter/scan_reduction = 0.1
+shader_parameter/blur = 0.35
+shader_parameter/diffusion = 0.1
+shader_parameter/vinnette_alpla = 1.0
+shader_parameter/vinnette_inner_radius = 3.5
