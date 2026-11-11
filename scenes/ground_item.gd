@@ -1,4 +1,3 @@
-@tool
 extends Sprite2D
 
 const CLOTH: AtlasTexture = preload("uid://b6dy5vkioy2i7")
@@ -6,19 +5,7 @@ const ROPE: AtlasTexture = preload("uid://f8oxlwo7qheu")
 const WOOD: AtlasTexture = preload("uid://8m3oak8yimmf")
 const STICKS: AtlasTexture = preload("uid://bfsb4wqnl77tn")
 
-@export var item: GameManager.Item:
-	set(value):
-		item = value
-
-		match value:
-			GameManager.Item.WOOD:
-				texture = WOOD
-			GameManager.Item.CLOTH:
-				texture = CLOTH
-			GameManager.Item.ROPE:
-				texture = ROPE
-			GameManager.Item.STICKS:
-				texture = STICKS
+@export var item: GameManager.Item
 
 var player_inside: bool = false
 var picked_up: bool = false

@@ -1,25 +1,28 @@
-[gd_scene format=3 uid="uid://d1sqa2uuicegy"]
+[gd_scene format=3 uid="uid://c27o72a66700x"]
 
-[ext_resource type="Script" uid="uid://ca0ssh78erg8d" path="res://scenes/ground_item.gd" id="1_oe8gi"]
-[ext_resource type="Texture2D" uid="uid://8m3oak8yimmf" path="res://resources/atlases/wood.tres" id="1_sxkc3"]
-[ext_resource type="Texture2D" uid="uid://det60erbpe3nc" path="res://assets/circle_light.png" id="3_m7nn2"]
+[ext_resource type="Texture2D" uid="uid://8m3oak8yimmf" path="res://resources/atlases/wood.tres" id="1_tk005"]
+[ext_resource type="Script" uid="uid://ca0ssh78erg8d" path="res://scenes/ground_item.gd" id="2_h130k"]
+[ext_resource type="Texture2D" uid="uid://det60erbpe3nc" path="res://assets/circle_light.png" id="3_fr3dm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 13.0
 
-[node name="GroundItem" type="Sprite2D" unique_id=2072517468]
-texture = ExtResource("1_sxkc3")
-script = ExtResource("1_oe8gi")
+[node name="Wood" type="Sprite2D" unique_id=2072517468]
+z_index = -1
+texture = ExtResource("1_tk005")
+script = ExtResource("2_h130k")
+item = 1
 
 [node name="Pickup" type="Area2D" parent="." unique_id=21742547]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup" unique_id=377891046]
 shape = SubResource("CircleShape2D_g2els")
 debug_color = Color(0, 0.5950001, 0.7, 0)
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1463369728]
 energy = 0.5
-texture = ExtResource("3_m7nn2")
+texture = ExtResource("3_fr3dm")
 texture_scale = 0.6
 metadata/_edit_lock_ = true
 

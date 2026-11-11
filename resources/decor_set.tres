@@ -1,6 +1,10 @@
 [gd_resource type="TileSet" format=3 uid="uid://cmxy1j4lb3ly0"]
 
 [ext_resource type="Texture2D" uid="uid://dghwkio3jk11x" path="res://resources/atlases/decor_atlas.tres" id="1_k4pvx"]
+[ext_resource type="PackedScene" uid="uid://dof8jwe0gmujp" path="res://scenes/ground_items/cloth.tscn" id="2_m0fcr"]
+[ext_resource type="PackedScene" uid="uid://cb4jdv0sqt278" path="res://scenes/ground_items/rope.tscn" id="3_gdjwg"]
+[ext_resource type="PackedScene" uid="uid://d1sqa2uuicegy" path="res://scenes/ground_items/sticks.tscn" id="4_31blq"]
+[ext_resource type="PackedScene" uid="uid://c27o72a66700x" path="res://scenes/ground_items/wood.tscn" id="5_7rwal"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thvod"]
 texture = ExtResource("1_k4pvx")
@@ -43,6 +47,14 @@ use_texture_padding = false
 1:2/0 = 0
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, 0, 6, 0, 6, 6, -6, 6)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5u38u"]
+resource_name = "Items"
+scenes/1/scene = ExtResource("2_m0fcr")
+scenes/2/scene = ExtResource("3_gdjwg")
+scenes/3/scene = ExtResource("4_31blq")
+scenes/4/scene = ExtResource("5_7rwal")
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_thvod")
+sources/1 = SubResource("TileSetScenesCollectionSource_5u38u")

@@ -28,6 +28,7 @@
 			"uuid": "18262224-b4ac-484c-a3ea-8a4f77343553",
 			"title": "Done",
 			"tasks": [
+				"70fcf620-433b-4896-b430-97ecd2c2b3c7",
 				"204c8c12-222c-4cc8-8339-c9f5f8b9371c",
 				"c04be79e-f612-4df9-a838-7645308d215a",
 				"963166c2-3600-4370-937c-a99e83309738",
@@ -126,6 +127,13 @@
 		{
 			"uuid": "204c8c12-222c-4cc8-8339-c9f5f8b9371c",
 			"title": "Improve ground items texture",
+			"description": "",
+			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
+			"steps": []
+		},
+		{
+			"uuid": "70fcf620-433b-4896-b430-97ecd2c2b3c7",
+			"title": "Add tilemap scene collection",
 			"description": "",
 			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
 			"steps": []
