@@ -27,8 +27,6 @@ func _physics_process(delta: float) -> void:
 	if not (is_sprinting and velocity):
 		stamina = clampf(stamina + delta * STAMINA_MULTIPLIER, 0.0, 100.0)
 
-	print(speed)
-
 	Game.stamina_changed.emit(stamina)
 
 	velocity = speed * input_vector

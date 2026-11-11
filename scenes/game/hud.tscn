@@ -89,6 +89,14 @@ text = "E to Pickup"
 label_settings = ExtResource("3_8m1vl")
 horizontal_alignment = 2
 
+[node name="DialogueLabel" type="Label" parent="." unique_id=1430832818]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "I need to escape..."
+label_settings = ExtResource("3_8m1vl")
+horizontal_alignment = 1
+
 [node name="Stamina" type="TextureProgressBar" parent="." unique_id=887055266]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.54901963)
