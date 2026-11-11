@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" format=3 uid="uid://cmxy1j4lb3ly0"]
+
+[ext_resource type="Texture2D" uid="uid://dghwkio3jk11x" path="res://resources/atlases/decor_atlas.tres" id="1_k4pvx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thvod"]
+texture = ExtResource("1_k4pvx")
+use_texture_padding = false
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+2:0/0 = 0
+2:1/0 = 0
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_thvod")

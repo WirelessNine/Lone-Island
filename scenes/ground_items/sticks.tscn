@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://d1sqa2uuicegy"]
 
-[ext_resource type="Script" uid="uid://ca0ssh78erg8d" path="res://scenes/ground_item.gd" id="1_oe8gi"]
-[ext_resource type="Texture2D" uid="uid://bfsb4wqnl77tn" path="res://resources/atlases/sticks.tres" id="1_wjwr5"]
+[ext_resource type="Script" uid="uid://ca0ssh78erg8d" path="res://scenes/ground_items/ground_item.gd" id="1_oe8gi"]
+[ext_resource type="Texture2D" uid="uid://bfsb4wqnl77tn" path="res://resources/atlases/items/sticks.tres" id="1_wjwr5"]
 [ext_resource type="Texture2D" uid="uid://det60erbpe3nc" path="res://assets/circle_light.png" id="3_m7nn2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 13.0
 
 [node name="Sticks" type="Sprite2D" unique_id=2072517468]
-z_index = -1
 texture = ExtResource("1_wjwr5")
 script = ExtResource("1_oe8gi")
 

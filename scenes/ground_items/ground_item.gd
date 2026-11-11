@@ -5,7 +5,7 @@ const ROPE: AtlasTexture = preload("uid://f8oxlwo7qheu")
 const WOOD: AtlasTexture = preload("uid://8m3oak8yimmf")
 const STICKS: AtlasTexture = preload("uid://bfsb4wqnl77tn")
 
-@export var item: GameManager.Item
+@export var item: Game.Item
 
 var player_inside: bool = false
 var picked_up: bool = false
@@ -17,7 +17,7 @@ func _input(event: InputEvent) -> void:
 
 	picked_up = true
 
-	GameManager.add_item(item)
+	Game.add_item(item)
 
 	queue_free()
 
@@ -27,7 +27,7 @@ func _on_pickup_body_entered(body: Node2D) -> void:
 		return
 
 	player_inside = true
-	GameManager.prompt_requested.emit(true, "Press E to Pickup")
+	Game.prompt_requested.emit(true, "Press E to Pickup")
 
 
 func _on_pickup_body_exited(body: Node2D) -> void:
@@ -35,4 +35,4 @@ func _on_pickup_body_exited(body: Node2D) -> void:
 		return
 
 	player_inside = false
-	GameManager.prompt_requested.emit(false, "")
+	Game.prompt_requested.emit(false, "")

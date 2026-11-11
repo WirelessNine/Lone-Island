@@ -1,0 +1,41 @@
+[gd_resource type="TileSet" format=3 uid="uid://ush6c1nk2oel"]
+
+[ext_resource type="Texture2D" uid="uid://ciewk36mbuww6" path="res://resources/atlases/floor_atlas.tres" id="1_8umcq"]
+[ext_resource type="PackedScene" uid="uid://dof8jwe0gmujp" path="res://scenes/ground_items/cloth.tscn" id="2_8gp1b"]
+[ext_resource type="PackedScene" uid="uid://cb4jdv0sqt278" path="res://scenes/ground_items/rope.tscn" id="3_ocs2a"]
+[ext_resource type="PackedScene" uid="uid://d1sqa2uuicegy" path="res://scenes/ground_items/sticks.tscn" id="4_yuay6"]
+[ext_resource type="PackedScene" uid="uid://c27o72a66700x" path="res://scenes/ground_items/wood.tscn" id="5_l4cde"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hfw3c"]
+texture = ExtResource("1_8umcq")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/probability = 0.02
+2:1/0 = 0
+2:1/0/probability = 0.02
+3:1/0 = 0
+3:1/0/probability = 0.02
+4:1/0 = 0
+4:1/0/probability = 0.02
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+5:0/0/probability = 0.2
+6:0/0 = 0
+6:0/0/probability = 0.2
+7:0/0 = 0
+7:0/0/probability = 0.05
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ho8sq"]
+resource_name = "Items"
+scenes/1/scene = ExtResource("2_8gp1b")
+scenes/2/scene = ExtResource("3_ocs2a")
+scenes/3/scene = ExtResource("4_yuay6")
+scenes/4/scene = ExtResource("5_l4cde")
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_hfw3c")
+sources/1 = SubResource("TileSetScenesCollectionSource_ho8sq")

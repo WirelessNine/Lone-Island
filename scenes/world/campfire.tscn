@@ -1,12 +1,9 @@
 [gd_scene format=3 uid="uid://cvs13pq64r15t"]
 
 [ext_resource type="Texture2D" uid="uid://ccgcegjxklooy" path="res://assets/island.png" id="1_m47ar"]
-[ext_resource type="Script" uid="uid://co8ufmc3mcs4n" path="res://scenes/campfire.gd" id="1_yfrnb"]
+[ext_resource type="Script" uid="uid://co8ufmc3mcs4n" path="res://scenes/world/campfire.gd" id="1_yfrnb"]
 [ext_resource type="Texture2D" uid="uid://det60erbpe3nc" path="res://assets/circle_light.png" id="2_54scn"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_as85p"]
-atlas = ExtResource("1_m47ar")
-region = Rect2(96, 16, 32, 32)
+[ext_resource type="Texture2D" uid="uid://c0qc3hvnvmj7f" path="res://resources/atlases/items/campfire_base.tres" id="2_jeowr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yfrnb"]
 atlas = ExtResource("1_m47ar")
@@ -58,7 +55,7 @@ script = ExtResource("1_yfrnb")
 
 [node name="Base" type="Sprite2D" parent="Sprite" unique_id=558411455]
 y_sort_enabled = true
-texture = SubResource("AtlasTexture_as85p")
+texture = ExtResource("2_jeowr")
 
 [node name="Fire" type="AnimatedSprite2D" parent="Sprite" unique_id=946852439]
 unique_name_in_owner = true

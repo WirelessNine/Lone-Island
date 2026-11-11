@@ -17,10 +17,10 @@ func _input(event: InputEvent) -> void:
 	if not (player_inside and event.is_action_pressed(&"interact")):
 		return
 
-	if GameManager.get_item_amount(GameManager.Item.STICKS) <= 0:
+	if Game.get_item_amount(Game.Item.STICKS) <= 0:
 		return
 
-	GameManager.remove_item(GameManager.Item.STICKS)
+	Game.remove_item(Game.Item.STICKS)
 	fuel += 1
 
 	if not is_on:
@@ -38,10 +38,10 @@ func toggle_fire(value: bool) -> void:
 
 func update_prompt() -> void:
 	if not player_inside:
-		GameManager.prompt_requested.emit(false, "")
+		Game.prompt_requested.emit(false, "")
 		return
 
-	GameManager.prompt_requested.emit(true, "Press E to add Fuel")
+	Game.prompt_requested.emit(true, "Press E to add Fuel")
 
 
 func _on_area_body_entered(body: Node2D) -> void:
@@ -49,7 +49,7 @@ func _on_area_body_entered(body: Node2D) -> void:
 		return
 
 	player_inside = true
-	GameManager.is_player_in_safezone = is_on
+	Game.is_player_in_safezone = is_on
 	update_prompt()
 
 
@@ -58,7 +58,7 @@ func _on_area_body_exited(body: Node2D) -> void:
 		return
 
 	player_inside = false
-	GameManager.is_player_in_safezone = false
+	Game.is_player_in_safezone = false
 	update_prompt()
 
 
