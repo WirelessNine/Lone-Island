@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cvs13pq64r15t"]
+
+[ext_resource type="Texture2D" uid="uid://ccgcegjxklooy" path="res://assets/island.png" id="1_m47ar"]
+[ext_resource type="Script" uid="uid://co8ufmc3mcs4n" path="res://scenes/campfire.gd" id="1_yfrnb"]
+[ext_resource type="Texture2D" uid="uid://det60erbpe3nc" path="res://assets/circle_light.png" id="2_54scn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as85p"]
+atlas = ExtResource("1_m47ar")
+region = Rect2(96, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfrnb"]
+atlas = ExtResource("1_m47ar")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pk5p"]
+atlas = ExtResource("1_m47ar")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6xh0"]
+atlas = ExtResource("1_m47ar")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v5ef"]
+atlas = ExtResource("1_m47ar")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_as85p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfrnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pk5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6xh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v5ef")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 13.63
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfrnb"]
+radius = 71.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_as85p"]
+radius = 14.0
+
+[node name="Campfire" type="StaticBody2D" unique_id=1412616682]
+y_sort_enabled = true
+script = ExtResource("1_yfrnb")
+
+[node name="Sprite" type="Node2D" parent="." unique_id=264375144]
+
+[node name="Base" type="Sprite2D" parent="Sprite" unique_id=558411455]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_as85p")
+
+[node name="Fire" type="AnimatedSprite2D" parent="Sprite" unique_id=946852439]
+unique_name_in_owner = true
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_as85p")
+autoplay = "default"
+frame_progress = 0.376539
+offset = Vector2(0, -8)
+
+[node name="Area" type="Area2D" parent="." unique_id=513897431]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=1234831504]
+shape = SubResource("CircleShape2D_yfrnb")
+
+[node name="AreaLight" type="PointLight2D" parent="." unique_id=1428677161]
+unique_name_in_owner = true
+color = Color(1, 0.48000002, 0.48000002, 1)
+texture = ExtResource("2_54scn")
+texture_scale = 3.0
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=794790900]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_as85p")
+
+[node name="FuelTimer" type="Timer" parent="." unique_id=422676171]
+unique_name_in_owner = true
+process_callback = 0
+wait_time = 25.0
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_area_body_exited"]
+[connection signal="timeout" from="FuelTimer" to="." method="_on_fuel_timer_timeout"]

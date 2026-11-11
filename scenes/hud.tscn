@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://brxqwial12me1" path="res://assets/ui.png" id="1_ahhtf"]
 [ext_resource type="LabelSettings" uid="uid://b86hciemkw0e0" path="res://resources/ui/label_settings.tres" id="2_oo0fn"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fi6k"]
+atlas = ExtResource("1_ahhtf")
+region = Rect2(0, 16, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_as85p"]
 atlas = ExtResource("1_ahhtf")
 region = Rect2(0, 0, 16, 16)
@@ -35,6 +39,16 @@ layout_mode = 2
 theme_override_constants/v_separation = 0
 columns = 2
 
+[node name="TextureRect4" type="TextureRect" parent="ItemsGrid" unique_id=788672996]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6fi6k")
+
+[node name="Sticks" type="Label" parent="ItemsGrid" unique_id=2049452432]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_oo0fn")
+
 [node name="TextureRect" type="TextureRect" parent="ItemsGrid" unique_id=1883621362]
 layout_mode = 2
 texture = SubResource("AtlasTexture_as85p")
@@ -65,7 +79,8 @@ layout_mode = 2
 text = "0"
 label_settings = ExtResource("2_oo0fn")
 
-[node name="PickupLabel" type="Label" parent="." unique_id=1459064299]
+[node name="PromptLabel" type="Label" parent="." unique_id=1459064299]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 8

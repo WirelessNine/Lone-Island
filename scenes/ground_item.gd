@@ -4,6 +4,7 @@ extends Sprite2D
 const CLOTH: AtlasTexture = preload("uid://b6dy5vkioy2i7")
 const ROPE: AtlasTexture = preload("uid://f8oxlwo7qheu")
 const WOOD: AtlasTexture = preload("uid://8m3oak8yimmf")
+const STICKS: AtlasTexture = preload("uid://bfsb4wqnl77tn")
 
 @export var item: GameManager.Item:
 	set(value):
@@ -16,23 +17,15 @@ const WOOD: AtlasTexture = preload("uid://8m3oak8yimmf")
 				texture = CLOTH
 			GameManager.Item.ROPE:
 				texture = ROPE
+			GameManager.Item.STICKS:
+				texture = STICKS
 
 var player_inside: bool = false
 var picked_up: bool = false
 
 
-func _ready() -> void:
-	pass
-
-
 func _input(event: InputEvent) -> void:
-	if not player_inside:
-		return
-
-	if not event.is_action_pressed(&"pickup"):
-		return
-
-	if picked_up:
+	if not (player_inside and not picked_up and event.is_action_pressed(&"interact")):
 		return
 
 	picked_up = true
@@ -47,7 +40,7 @@ func _on_pickup_body_entered(body: Node2D) -> void:
 		return
 
 	player_inside = true
-	GameManager.pickup_entered.emit()
+	GameManager.prompt_requested.emit(true, "Press E to Pickup")
 
 
 func _on_pickup_body_exited(body: Node2D) -> void:
@@ -55,4 +48,4 @@ func _on_pickup_body_exited(body: Node2D) -> void:
 		return
 
 	player_inside = false
-	GameManager.pickup_exited.emit()
+	GameManager.prompt_requested.emit(false, "")
