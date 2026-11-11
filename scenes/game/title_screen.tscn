@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://didv63opf6cu4"]
+
+[ext_resource type="FontFile" uid="uid://bsya1tb5m0dud" path="res://assets/monogram-extended.ttf" id="1_amlxd"]
+[ext_resource type="Script" uid="uid://cqlyad1pt1eax" path="res://scenes/game/title_screen.gd" id="1_v1bup"]
+[ext_resource type="Texture2D" uid="uid://b8vl6e8t4yyap" path="res://assets/title.png" id="2_3t1qn"]
+[ext_resource type="LabelSettings" uid="uid://b86hciemkw0e0" path="res://resources/ui/label_settings.tres" id="3_idahx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eugc3"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="TitleScreen" type="PanelContainer" unique_id=40335172]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eugc3")
+script = ExtResource("1_v1bup")
+
+[node name="Title" type="TextureRect" parent="." unique_id=1802851199]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 15)
+texture = ExtResource("2_3t1qn")
+
+[node name="Start" type="Button" parent="." unique_id=1589622505]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_amlxd")
+text = "Start"
+flat = true
+
+[node name="Label" type="Label" parent="." unique_id=620703548]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "WirelessNine"
+label_settings = ExtResource("3_idahx")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

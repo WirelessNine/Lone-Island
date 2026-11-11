@@ -26,6 +26,7 @@
 			"uuid": "18262224-b4ac-484c-a3ea-8a4f77343553",
 			"title": "Done",
 			"tasks": [
+				"9e6f6165-1078-4f61-821d-5cce0d37670f",
 				"843bb290-dd98-4208-a0af-55ee6c9c5545",
 				"bb6a33fb-25d9-4330-bfb9-de543c517649",
 				"f86b3b5c-5ccd-4589-b9f6-b4d49ea811ca",
@@ -142,6 +143,13 @@
 		{
 			"uuid": "f86b3b5c-5ccd-4589-b9f6-b4d49ea811ca",
 			"title": "Reorganize project",
+			"description": "",
+			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
+			"steps": []
+		},
+		{
+			"uuid": "9e6f6165-1078-4f61-821d-5cce0d37670f",
+			"title": "Add title screen and game start",
 			"description": "",
 			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
 			"steps": []
