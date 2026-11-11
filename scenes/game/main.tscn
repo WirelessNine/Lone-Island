@@ -35,7 +35,3 @@ metadata/_edit_lock_ = true
 
 [node name="TitleScreen" parent="UI" unique_id=40335172 instance=ExtResource("9_8aysu")]
 unique_name_in_owner = true
-
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=234366201]
-visible = false
-color = Color(0, 0, 0, 1)

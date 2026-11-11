@@ -15,6 +15,7 @@ enum Item {
 
 var items: Dictionary[Item, int] = { Item.STICKS: 0, Item.WOOD: 0, Item.CLOTH: 0, Item.ROPE: 0 }
 var is_player_in_safezone: bool = false
+var is_day: bool = true
 
 
 func add_item(item: Item) -> void:

@@ -7,6 +7,60 @@
 [ext_resource type="TileSet" uid="uid://cmxy1j4lb3ly0" path="res://resources/tile_sets/decor_set.tres" id="4_a33jj"]
 [ext_resource type="PackedScene" uid="uid://cvs13pq64r15t" path="res://scenes/world/campfire.tscn" id="5_68iyn"]
 
+[sub_resource type="Animation" id="Animation_q5tta"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vn813"]
+resource_name = "day"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a33jj"]
+resource_name = "night"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_68iyn"]
+_data = {
+&"RESET": SubResource("Animation_q5tta"),
+&"day": SubResource("Animation_vn813"),
+&"night": SubResource("Animation_a33jj")
+}
+
 [node name="World" type="Node2D" unique_id=79535104]
 y_sort_enabled = true
 script = ExtResource("1_q5tta")
@@ -36,3 +90,16 @@ metadata/_edit_lock_ = true
 [node name="Campfire" parent="." unique_id=1412616682 instance=ExtResource("5_68iyn")]
 position = Vector2(117, -3)
 metadata/_edit_lock_ = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1776896563]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=32465193]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_68iyn")
+
+[node name="DayTimer" type="Timer" parent="." unique_id=152527331]
+unique_name_in_owner = true
+process_callback = 0
+one_shot = true
+
+[connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]
