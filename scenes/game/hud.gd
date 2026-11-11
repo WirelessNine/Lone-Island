@@ -7,9 +7,12 @@ extends MarginContainer
 
 @onready var prompt_label: Label = %PromptLabel
 
+@onready var stamina_progress: TextureProgressBar = %Stamina
+
 
 func _ready() -> void:
 	Game.items_changed.connect(_on_items_changed)
+	Game.stamina_changed.connect(_on_stamina_changed)
 	Game.prompt_requested.connect(_on_prompt_requested)
 
 
@@ -23,3 +26,7 @@ func _on_items_changed() -> void:
 func _on_prompt_requested(prompt_visible: bool, text: String) -> void:
 	prompt_label.visible = prompt_visible
 	prompt_label.text = text
+
+
+func _on_stamina_changed(new_value: float) -> void:
+	stamina_progress.value = new_value

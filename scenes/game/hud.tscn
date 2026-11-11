@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b5bfclbxmukol" path="res://scenes/game/hud.gd" id="1_5645d"]
 [ext_resource type="Texture2D" uid="uid://brxqwial12me1" path="res://assets/ui.png" id="2_xu0sl"]
 [ext_resource type="LabelSettings" uid="uid://b86hciemkw0e0" path="res://resources/ui/label_settings.tres" id="3_8m1vl"]
+[ext_resource type="Texture2D" uid="uid://c11s2514vdqms" path="res://resources/atlases/ui/sprint_progress.tres" id="4_xu0sl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6fi6k"]
 atlas = ExtResource("2_xu0sl")
@@ -26,10 +27,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 2
-theme_override_constants/margin_bottom = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 script = ExtResource("1_5645d")
 metadata/_edit_lock_ = true
 
@@ -87,3 +88,13 @@ size_flags_vertical = 8
 text = "E to Pickup"
 label_settings = ExtResource("3_8m1vl")
 horizontal_alignment = 2
+
+[node name="Stamina" type="TextureProgressBar" parent="." unique_id=887055266]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.54901963)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+value = 79.0
+fill_mode = 4
+texture_progress = ExtResource("4_xu0sl")
