@@ -1,5 +1,12 @@
 extends MarginContainer
 
+const AMOUNT_STRING: String = "%d/%d"
+
+@onready var sticks_icon: TextureRect = %SticksIcon
+@onready var wood_icon: TextureRect = %WoodIcon
+@onready var cloth_icon: TextureRect = %ClothIcon
+@onready var rope_icon: TextureRect = %RopeIcon
+
 @onready var wood: Label = %Wood
 @onready var cloth: Label = %Cloth
 @onready var rope: Label = %Rope
@@ -13,16 +20,47 @@ extends MarginContainer
 
 func _ready() -> void:
 	Game.items_changed.connect(_on_items_changed)
+	Game.flash_item_requested.connect(_on_flash_item_requested)
 	Game.stamina_changed.connect(_on_stamina_changed)
 	Game.prompt_requested.connect(_on_prompt_requested)
 	Game.dialogue_requested.connect(_on_dialogue_requested)
 
+	_on_items_changed()
+
 
 func _on_items_changed() -> void:
 	sticks.text = str(Game.get_item_amount(Game.Item.STICKS))
-	wood.text = str(Game.get_item_amount(Game.Item.WOOD))
-	cloth.text = str(Game.get_item_amount(Game.Item.CLOTH))
-	rope.text = str(Game.get_item_amount(Game.Item.ROPE))
+
+	wood.text = AMOUNT_STRING % [Game.get_item_amount(Game.Item.WOOD), Game.WOOD_REQUIRED]
+	cloth.text = AMOUNT_STRING % [Game.get_item_amount(Game.Item.CLOTH), Game.CLOTH_REQUIRED]
+	rope.text = AMOUNT_STRING % [Game.get_item_amount(Game.Item.ROPE), Game.ROPE_REQUIRED]
+
+
+func _on_flash_item_requested(item: Game.Item) -> void:
+	var rect: TextureRect = null
+	var label: Label = null
+
+	match item:
+		Game.Item.STICKS:
+			rect = sticks_icon
+			label = sticks
+		Game.Item.WOOD:
+			rect = wood_icon
+			label = wood
+		Game.Item.CLOTH:
+			rect = cloth_icon
+			label = cloth
+		Game.Item.ROPE:
+			rect = rope_icon
+			label = rope
+
+	rect.modulate = Color.RED
+	label.modulate = Color.RED
+
+	await get_tree().create_timer(0.1).timeout
+
+	rect.modulate = Color.WHITE
+	label.modulate = Color.WHITE
 
 
 func _on_prompt_requested(prompt_visible: bool, text: String) -> void:

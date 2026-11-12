@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://do2a5illgre3p"]
+
+[ext_resource type="Script" uid="uid://ccm45q78gp63n" path="res://scenes/world/boat.gd" id="1_bxp1c"]
+[ext_resource type="Texture2D" uid="uid://cip4glvbncb6c" path="res://resources/atlases/items/boat.tres" id="1_nd8mm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_as85p"]
+size = Vector2(60, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nd8mm"]
+radius = 71.0
+
+[node name="Boat" type="StaticBody2D" unique_id=239427121]
+y_sort_enabled = true
+script = ExtResource("1_bxp1c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=945240089]
+y_sort_enabled = true
+texture = ExtResource("1_nd8mm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=147590280]
+position = Vector2(-1, 7.5)
+shape = SubResource("RectangleShape2D_as85p")
+
+[node name="Area" type="Area2D" parent="." unique_id=2059458655]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=162695290]
+shape = SubResource("CircleShape2D_nd8mm")
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_area_body_exited"]

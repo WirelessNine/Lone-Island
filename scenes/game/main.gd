@@ -5,17 +5,34 @@ const WORLD: PackedScene = preload("uid://cynwuhlfs1dpj")
 @onready var title_screen: PanelContainer = %TitleScreen
 @onready var fade_rect: ColorRect = %Fade
 
+var world: Node2D
+
 
 func _ready() -> void:
 	Game.game_started.connect(_on_game_started)
+	Game.game_finished.connect(_on_game_finished)
 	Game.fade_requested.connect(_on_fade_requested)
 
 
 func _on_game_started() -> void:
 	title_screen.hide()
 
-	var world: Node2D = WORLD.instantiate()
+	world = WORLD.instantiate()
 	add_child(world)
+
+
+func _on_game_finished() -> void:
+	world.process_mode = Node.PROCESS_MODE_DISABLED
+
+	Game.fade_requested.emit(true, 0.5)
+
+	await get_tree().create_timer(0.5).timeout
+
+	world.queue_free()
+	title_screen.show()
+	title_screen.show_finish_panel()
+
+	Game.fade_requested.emit(false, 0.5)
 
 
 func _on_fade_requested(fade_in: bool, time: float) -> void:

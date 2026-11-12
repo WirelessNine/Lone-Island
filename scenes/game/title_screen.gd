@@ -2,6 +2,19 @@ extends PanelContainer
 
 var started: bool
 
+@onready var start_panel: PanelContainer = %StartPanel
+@onready var finish_panel: PanelContainer = %FinishPanel
+
+
+func _ready() -> void:
+	start_panel.show()
+	finish_panel.hide()
+
+
+func show_finish_panel() -> void:
+	start_panel.hide()
+	finish_panel.show()
+
 
 func _on_start_pressed() -> void:
 	if started:

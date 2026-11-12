@@ -18,6 +18,7 @@ func _input(event: InputEvent) -> void:
 		return
 
 	if Game.get_item_amount(Game.Item.STICKS) <= 0:
+		Game.flash_item_requested.emit(Game.Item.STICKS)
 		return
 
 	Game.remove_item(Game.Item.STICKS)

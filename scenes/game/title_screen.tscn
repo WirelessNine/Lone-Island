@@ -8,6 +8,10 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eugc3"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_syx3y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_as85p"]
+
 [node name="TitleScreen" type="PanelContainer" unique_id=40335172]
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +21,13 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eugc3")
 script = ExtResource("1_v1bup")
 
-[node name="Title" type="TextureRect" parent="." unique_id=1802851199]
+[node name="StartPanel" type="PanelContainer" parent="." unique_id=1181552739]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_syx3y")
+
+[node name="Title" type="TextureRect" parent="StartPanel" unique_id=1802851199]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -25,17 +35,27 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(0, 15)
 texture = ExtResource("2_3t1qn")
 
-[node name="Start" type="Button" parent="." unique_id=1589622505]
+[node name="Start" type="Button" parent="StartPanel" unique_id=1589622505]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_amlxd")
 text = "Start"
 flat = true
 
-[node name="Label" type="Label" parent="." unique_id=620703548]
+[node name="FinishPanel" type="PanelContainer" parent="." unique_id=1907873340]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-text = "WirelessNine"
-label_settings = ExtResource("3_idahx")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_as85p")
 
-[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[node name="Label" type="Label" parent="FinishPanel" unique_id=172296346]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "You Escaped!
+
+Whatever that island was,
+I hope to never return again...
+
+Thank you for playing!"
+label_settings = ExtResource("3_idahx")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="StartPanel/Start" to="." method="_on_start_pressed"]

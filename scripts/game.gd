@@ -5,7 +5,13 @@ signal stamina_changed(new_value: float)
 signal dialogue_requested(text: String)
 signal prompt_requested(visible: bool, text: String)
 signal fade_requested(fade_in: bool, time: float)
+signal flash_item_requested(item: Game.Item)
 signal game_started
+signal game_finished
+
+const WOOD_REQUIRED: int = 4
+const CLOTH_REQUIRED: int = 5
+const ROPE_REQUIRED: int = 6
 
 enum Item {
 	STICKS,
