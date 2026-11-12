@@ -4,6 +4,7 @@ signal items_changed
 signal stamina_changed(new_value: float)
 signal dialogue_requested(text: String)
 signal prompt_requested(visible: bool, text: String)
+signal fade_requested(fade_in: bool, time: float)
 signal game_started
 
 enum Item {

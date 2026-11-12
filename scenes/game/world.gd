@@ -10,7 +10,9 @@ const NIGHT_TIME: float = 60.0
 func _ready() -> void:
 	day_timer.start(DAY_TIME)
 
-	await get_tree().create_timer(1.0).timeout
+	Game.fade_requested.emit(false, 1.5)
+
+	await get_tree().create_timer(2.0).timeout
 
 	Game.dialogue_requested.emit("I need to escape...")
 
