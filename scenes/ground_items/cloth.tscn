@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b6dy5vkioy2i7" path="res://resources/atlases/items/cloth.tres" id="1_xc6xl"]
 [ext_resource type="Script" uid="uid://ca0ssh78erg8d" path="res://scenes/ground_items/ground_item.gd" id="2_sj5ht"]
 [ext_resource type="Texture2D" uid="uid://det60erbpe3nc" path="res://assets/circle_light.png" id="3_tnk2l"]
+[ext_resource type="AudioStream" uid="uid://v2y8r5fjhso2" path="res://assets/audio/pickup.wav" id="4_sj5ht"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 13.0
@@ -24,6 +25,9 @@ energy = 0.5
 texture = ExtResource("3_tnk2l")
 texture_scale = 0.6
 metadata/_edit_lock_ = true
+
+[node name="PickupSFX" type="AudioStreamPlayer" parent="." unique_id=1585693497]
+stream = ExtResource("4_sj5ht")
 
 [connection signal="body_entered" from="Pickup" to="." method="_on_pickup_body_entered"]
 [connection signal="body_exited" from="Pickup" to="." method="_on_pickup_body_exited"]

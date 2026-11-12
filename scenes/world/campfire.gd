@@ -7,6 +7,8 @@ var player_inside: bool = false
 @onready var fuel_timer: Timer = %FuelTimer
 @onready var fire_sprite: AnimatedSprite2D = %Fire
 @onready var area_light: PointLight2D = %AreaLight
+@onready var error_sfx: AudioStreamPlayer = %ErrorSFX
+@onready var place_sfx: AudioStreamPlayer = %PlaceSFX
 
 
 func _ready() -> void:
@@ -19,6 +21,7 @@ func _input(event: InputEvent) -> void:
 
 	if Game.get_item_amount(Game.Item.STICKS) <= 0:
 		Game.flash_item_requested.emit(Game.Item.STICKS)
+		error_sfx.play()
 		return
 
 	Game.remove_item(Game.Item.STICKS)
@@ -28,6 +31,8 @@ func _input(event: InputEvent) -> void:
 		is_on = true
 		toggle_fire(true)
 		fuel_timer.start()
+
+	place_sfx.play()
 
 	update_prompt()
 

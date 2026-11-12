@@ -10,6 +10,9 @@ const STICKS: AtlasTexture = preload("uid://bfsb4wqnl77tn")
 var player_inside: bool = false
 var picked_up: bool = false
 
+@onready var pickup_sfx: AudioStreamPlayer = $PickupSFX
+@onready var pickup: Area2D = $Pickup
+
 
 func _input(event: InputEvent) -> void:
 	if not (player_inside and not picked_up and event.is_action_pressed(&"interact")):
@@ -18,6 +21,12 @@ func _input(event: InputEvent) -> void:
 	picked_up = true
 
 	Game.add_item(item)
+
+	pickup_sfx.play()
+	pickup.monitoring = false
+	hide()
+
+	await pickup_sfx.finished
 
 	queue_free()
 

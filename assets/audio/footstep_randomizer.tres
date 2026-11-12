@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://wum11qikiabo"]
+
+[ext_resource type="AudioStream" uid="uid://dkhy4xxcev80q" path="res://assets/audio/footstep.wav" id="1_bn5ri"]
+
+[resource]
+random_pitch = 1.2599211
+streams_count = 1
+stream_0/stream = ExtResource("1_bn5ri")

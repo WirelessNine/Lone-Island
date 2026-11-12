@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://gwtladya383k" path="res://scenes/world/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://4082vk2j8pn" path="res://assets/characters.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://det60erbpe3nc" path="res://assets/circle_light.png" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://wum11qikiabo" path="res://assets/audio/footstep_randomizer.tres" id="4_n3lu5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -128,3 +129,15 @@ shadow_enabled = true
 texture = ExtResource("3_qhqgy")
 texture_scale = 2.0
 metadata/_edit_lock_ = true
+
+[node name="FootstepSFX" type="AudioStreamPlayer" parent="." unique_id=2001909185]
+unique_name_in_owner = true
+stream = ExtResource("4_n3lu5")
+volume_db = -10.0
+
+[node name="FootstepTimer" type="Timer" parent="." unique_id=643405451]
+unique_name_in_owner = true
+process_callback = 0
+autostart = true
+
+[connection signal="timeout" from="FootstepTimer" to="." method="_on_footstep_timer_timeout"]

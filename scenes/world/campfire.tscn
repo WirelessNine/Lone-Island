@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://co8ufmc3mcs4n" path="res://scenes/world/campfire.gd" id="1_yfrnb"]
 [ext_resource type="Texture2D" uid="uid://det60erbpe3nc" path="res://assets/circle_light.png" id="2_54scn"]
 [ext_resource type="Texture2D" uid="uid://c0qc3hvnvmj7f" path="res://resources/atlases/items/campfire_base.tres" id="2_jeowr"]
+[ext_resource type="AudioStream" uid="uid://b36i2gem0onrt" path="res://assets/audio/error_randomizer.tres" id="5_s8uhy"]
+[ext_resource type="AudioStream" uid="uid://rqri1eqnkvbu" path="res://assets/audio/place_sticks.wav" id="6_jtf6h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yfrnb"]
 atlas = ExtResource("1_m47ar")
@@ -85,6 +87,14 @@ shape = SubResource("CircleShape2D_as85p")
 unique_name_in_owner = true
 process_callback = 0
 wait_time = 25.0
+
+[node name="ErrorSFX" type="AudioStreamPlayer" parent="." unique_id=1771552724]
+unique_name_in_owner = true
+stream = ExtResource("5_s8uhy")
+
+[node name="PlaceSFX" type="AudioStreamPlayer" parent="." unique_id=1705890131]
+unique_name_in_owner = true
+stream = ExtResource("6_jtf6h")
 
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_area_body_exited"]

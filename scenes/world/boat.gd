@@ -3,6 +3,8 @@ extends StaticBody2D
 var player_inside = true
 var is_repaired: bool = false
 
+@onready var error_sfx: AudioStreamPlayer = %ErrorSFX
+
 
 func _input(event: InputEvent) -> void:
 	if not (player_inside and not is_repaired and event.is_action_pressed(&"interact")):
@@ -15,7 +17,6 @@ func _input(event: InputEvent) -> void:
 	var has_enough_items: bool = true
 
 	if wood < Game.WOOD_REQUIRED:
-		print("b")
 		has_enough_items = false
 		Game.flash_item_requested.emit(Game.Item.WOOD)
 
@@ -28,6 +29,7 @@ func _input(event: InputEvent) -> void:
 		Game.flash_item_requested.emit(Game.Item.ROPE)
 
 	if not has_enough_items:
+		error_sfx.play()
 		return
 
 	Game.game_finished.emit()

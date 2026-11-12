@@ -9,6 +9,8 @@ var stamina: float = 100.0
 var is_exhausted: bool = false
 
 @onready var sprite: AnimatedSprite2D = %Sprite
+@onready var footstep_sfx: AudioStreamPlayer = %FootstepSFX
+@onready var footstep_timer: Timer = %FootstepTimer
 
 
 func _physics_process(delta: float) -> void:
@@ -29,6 +31,16 @@ func _physics_process(delta: float) -> void:
 
 	Game.stamina_changed.emit(stamina)
 
+	if not velocity:
+		if not footstep_timer.paused:
+			footstep_timer.paused = true
+
+	else:
+		footstep_timer.wait_time = 0.2 if is_sprinting else 0.4
+
+		if footstep_timer.paused:
+			footstep_timer.paused = false
+
 	velocity = speed * input_vector
 
 	if velocity.x < 0:
@@ -45,3 +57,7 @@ func _physics_process(delta: float) -> void:
 			sprite.play(&"walk")
 
 	move_and_slide()
+
+
+func _on_footstep_timer_timeout() -> void:
+	footstep_sfx.play()
