@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dih4tsh4ktqwf"]
+
+[ext_resource type="Texture2D" uid="uid://4082vk2j8pn" path="res://assets/characters.png" id="1_hun3s"]
+[ext_resource type="Script" uid="uid://fnwf6luw5wop" path="res://scenes/world/leto.gd" id="1_nbxn5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbxn5"]
+atlas = ExtResource("1_hun3s")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc0j5"]
+atlas = ExtResource("1_hun3s")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs17j"]
+atlas = ExtResource("1_hun3s")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yjeb"]
+atlas = ExtResource("1_hun3s")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_as85p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbxn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc0j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs17j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yjeb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_as85p"]
+radius = 19.026299
+
+[node name="Leto" type="Area2D" unique_id=680453137]
+script = ExtResource("1_nbxn5")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=19268547]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_as85p")
+autoplay = "default"
+frame_progress = 0.49483627
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1124050413]
+shape = SubResource("CircleShape2D_as85p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

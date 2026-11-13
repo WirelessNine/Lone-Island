@@ -11,6 +11,7 @@ var skip_start: bool = true
 
 func _ready() -> void:
 	Game.game_started.connect(_on_game_started)
+	Game.game_failed.connect(_on_game_failed)
 	Game.game_finished.connect(_on_game_finished)
 	Game.fade_requested.connect(_on_fade_requested)
 
@@ -23,6 +24,22 @@ func _on_game_started() -> void:
 
 	world = WORLD.instantiate()
 	add_child(world)
+
+
+func _on_game_failed() -> void:
+	world.player.kill()
+
+	await get_tree().create_timer(1.0).timeout
+
+	Game.fade_requested.emit(true, 1.5)
+
+	await get_tree().create_timer(1.5).timeout
+
+	world.queue_free()
+
+	await get_tree().process_frame
+
+	_on_game_started()
 
 
 func _on_game_finished() -> void:

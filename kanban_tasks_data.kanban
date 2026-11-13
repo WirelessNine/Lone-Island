@@ -11,11 +11,8 @@
 			"uuid": "39aafb57-7a06-4836-82fa-06a9dfd89cf8",
 			"title": "Todo",
 			"tasks": [
-				"50937b29-49e0-4f55-a914-da2943bb8ef8",
-				"4a48ea4b-7375-4db4-83f0-569a7a47dc9a",
 				"cd429cde-bbc4-409e-8d7b-3f26ab6898f7",
-				"c87cab92-ff55-4969-8fcd-9f26e8cde281",
-				"c7606693-8a8c-4124-add5-b217bf425996"
+				"c87cab92-ff55-4969-8fcd-9f26e8cde281"
 			]
 		},
 		{
@@ -27,6 +24,7 @@
 			"uuid": "18262224-b4ac-484c-a3ea-8a4f77343553",
 			"title": "Done",
 			"tasks": [
+				"50937b29-49e0-4f55-a914-da2943bb8ef8",
 				"962307a4-a06b-40bb-8a52-56014c169b0b",
 				"026f177d-69f3-4f74-8f85-f16589095914",
 				"e0793c05-b4b8-452a-a02d-3e84287454c8",
@@ -92,7 +90,7 @@
 		},
 		{
 			"uuid": "50937b29-49e0-4f55-a914-da2943bb8ef8",
-			"title": "Add chasing monster",
+			"title": "Add monster and death",
 			"description": "",
 			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
 			"steps": []
@@ -177,20 +175,6 @@
 		{
 			"uuid": "026f177d-69f3-4f74-8f85-f16589095914",
 			"title": "Add sound effects",
-			"description": "",
-			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
-			"steps": []
-		},
-		{
-			"uuid": "c7606693-8a8c-4124-add5-b217bf425996",
-			"title": "Add death and restarting",
-			"description": "",
-			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
-			"steps": []
-		},
-		{
-			"uuid": "4a48ea4b-7375-4db4-83f0-569a7a47dc9a",
-			"title": "Add eyes monster",
 			"description": "",
 			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
 			"steps": []

@@ -4,6 +4,8 @@ var fuel: int = 0
 var is_on: bool = false
 var player_inside: bool = false
 
+var has_added_items: bool = false
+
 @onready var fuel_timer: Timer = %FuelTimer
 @onready var fire_sprite: AnimatedSprite2D = %Fire
 @onready var area_light: PointLight2D = %AreaLight
@@ -34,6 +36,10 @@ func _input(event: InputEvent) -> void:
 
 	place_sfx.play()
 
+	if not has_added_items:
+		has_added_items = true
+		Game.dialogue_requested.emit("The fire will keep me safe.")
+
 	update_prompt()
 
 
@@ -58,6 +64,8 @@ func _on_area_body_entered(body: Node2D) -> void:
 	Game.is_player_in_safezone = is_on
 	update_prompt()
 
+	Game.safe_zone_changed.emit()
+
 
 func _on_area_body_exited(body: Node2D) -> void:
 	if not body is Player2D:
@@ -66,6 +74,8 @@ func _on_area_body_exited(body: Node2D) -> void:
 	player_inside = false
 	Game.is_player_in_safezone = false
 	update_prompt()
+
+	Game.safe_zone_changed.emit()
 
 
 func _on_fuel_timer_timeout() -> void:

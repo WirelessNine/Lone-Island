@@ -2,11 +2,13 @@ extends Node
 
 signal items_changed
 signal stamina_changed(new_value: float)
+signal safe_zone_changed
 signal dialogue_requested(text: String)
 signal prompt_requested(visible: bool, text: String)
 signal fade_requested(fade_in: bool, time: float)
 signal flash_item_requested(item: Game.Item)
 signal game_started
+signal game_failed
 signal game_finished
 
 const WOOD_REQUIRED: int = 4

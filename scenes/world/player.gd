@@ -7,6 +7,7 @@ const STAMINA_MULTIPLIER: float = 15.0
 
 var stamina: float = 100.0
 var is_exhausted: bool = false
+var is_disabled: bool = false
 
 @onready var sprite: AnimatedSprite2D = %Sprite
 @onready var footstep_sfx: AudioStreamPlayer = %FootstepSFX
@@ -14,6 +15,9 @@ var is_exhausted: bool = false
 
 
 func _physics_process(delta: float) -> void:
+	if is_disabled:
+		return
+
 	var input_vector: Vector2 = Input.get_vector(&"left", &"right", &"up", &"down")
 
 	var is_sprinting: bool = Input.is_action_pressed(&"sprint")
@@ -57,6 +61,12 @@ func _physics_process(delta: float) -> void:
 			sprite.play(&"walk")
 
 	move_and_slide()
+
+
+func kill() -> void:
+	is_disabled = true
+	footstep_timer.stop()
+	hide()
 
 
 func _on_footstep_timer_timeout() -> void:
