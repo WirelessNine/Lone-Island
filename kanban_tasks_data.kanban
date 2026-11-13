@@ -24,6 +24,7 @@
 			"uuid": "18262224-b4ac-484c-a3ea-8a4f77343553",
 			"title": "Done",
 			"tasks": [
+				"fc7d1a2f-ea82-4a1c-9114-d3066c47d264",
 				"abec423f-6363-4ad6-ae05-3787a88d9cbe",
 				"50937b29-49e0-4f55-a914-da2943bb8ef8",
 				"962307a4-a06b-40bb-8a52-56014c169b0b",
@@ -190,6 +191,13 @@
 		{
 			"uuid": "abec423f-6363-4ad6-ae05-3787a88d9cbe",
 			"title": "Small tweaks and bug fixes",
+			"description": "",
+			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
+			"steps": []
+		},
+		{
+			"uuid": "fc7d1a2f-ea82-4a1c-9114-d3066c47d264",
+			"title": "Add more sound effects",
 			"description": "",
 			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
 			"steps": []

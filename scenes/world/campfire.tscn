@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c0qc3hvnvmj7f" path="res://resources/atlases/items/campfire_base.tres" id="2_jeowr"]
 [ext_resource type="AudioStream" uid="uid://b36i2gem0onrt" path="res://assets/audio/error_randomizer.tres" id="5_s8uhy"]
 [ext_resource type="AudioStream" uid="uid://rqri1eqnkvbu" path="res://assets/audio/place_sticks.wav" id="6_jtf6h"]
+[ext_resource type="AudioStream" uid="uid://d36rs0jhu5omf" path="res://assets/audio/swoosh.wav" id="7_3emsu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yfrnb"]
 atlas = ExtResource("1_m47ar")
@@ -95,6 +96,12 @@ stream = ExtResource("5_s8uhy")
 [node name="PlaceSFX" type="AudioStreamPlayer" parent="." unique_id=1705890131]
 unique_name_in_owner = true
 stream = ExtResource("6_jtf6h")
+
+[node name="OutSFX" type="AudioStreamPlayer2D" parent="." unique_id=1346989894]
+unique_name_in_owner = true
+stream = ExtResource("7_3emsu")
+max_distance = 250.0
+attenuation = 0.31864017
 
 [connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_area_body_exited"]

@@ -12,6 +12,7 @@ var is_disabled: bool = false
 @onready var sprite: AnimatedSprite2D = %Sprite
 @onready var footstep_sfx: AudioStreamPlayer = %FootstepSFX
 @onready var footstep_timer: Timer = %FootstepTimer
+@onready var death_sfx: AudioStreamPlayer = %DeathSFX
 
 
 func _physics_process(delta: float) -> void:
@@ -66,7 +67,9 @@ func _physics_process(delta: float) -> void:
 func kill() -> void:
 	is_disabled = true
 	footstep_timer.stop()
-	hide()
+	sprite.modulate.a = 0.0
+
+	death_sfx.play()
 
 
 func _on_footstep_timer_timeout() -> void:

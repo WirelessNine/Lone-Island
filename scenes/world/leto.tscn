@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://4082vk2j8pn" path="res://assets/characters.png" id="1_hun3s"]
 [ext_resource type="Script" uid="uid://fnwf6luw5wop" path="res://scenes/world/leto.gd" id="1_nbxn5"]
+[ext_resource type="AudioStream" uid="uid://cc11f7lg1sj7u" path="res://assets/audio/roar_randomizer.tres" id="3_rc0j5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nbxn5"]
 atlas = ExtResource("1_hun3s")
@@ -54,4 +55,17 @@ frame_progress = 0.49483627
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1124050413]
 shape = SubResource("CircleShape2D_as85p")
 
+[node name="RoarSFX" type="AudioStreamPlayer2D" parent="." unique_id=1596647710]
+unique_name_in_owner = true
+stream = ExtResource("3_rc0j5")
+max_distance = 1500.0
+attenuation = 0.5
+
+[node name="RoarTimer" type="Timer" parent="." unique_id=349281185]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="RoarTimer" to="." method="_on_roar_timer_timeout"]

@@ -11,6 +11,7 @@ var has_added_items: bool = false
 @onready var area_light: PointLight2D = %AreaLight
 @onready var error_sfx: AudioStreamPlayer = %ErrorSFX
 @onready var place_sfx: AudioStreamPlayer = %PlaceSFX
+@onready var out_sfx: AudioStreamPlayer2D = %OutSFX
 
 
 func _ready() -> void:
@@ -91,6 +92,7 @@ func _on_fuel_timer_timeout() -> void:
 		is_on = false
 		toggle_fire(false)
 		fuel_timer.stop()
+		out_sfx.play()
 
 		if player_inside:
 			Game.is_player_in_safezone = is_on

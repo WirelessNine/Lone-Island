@@ -35,7 +35,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/registry/plugin.cfg", "res://addons/scene_pool/plugin.cfg", "res://addons/ui_expansion/plugin.cfg")
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/audio_library/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/registry/plugin.cfg", "res://addons/scene_pool/plugin.cfg", "res://addons/ui_expansion/plugin.cfg")
 
 [file_customization]
 

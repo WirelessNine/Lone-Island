@@ -7,6 +7,8 @@ const SPEED: float = 65.0
 var enabled: bool = true
 
 @onready var sprite: AnimatedSprite2D = %Sprite
+@onready var roar_sfx: AudioStreamPlayer2D = %RoarSFX
+@onready var roar_timer: Timer = %RoarTimer
 
 
 func enable() -> void:
@@ -33,8 +35,17 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	return
 	if body is not Player2D:
 		return
 
 	Game.game_failed.emit()
+
+
+func _on_roar_timer_timeout() -> void:
+	if not enabled:
+		roar_timer.start(randf_range(4.0, 10.0))
+		return
+
+	roar_sfx.play()
+
+	roar_timer.start(randf_range(4.0, 10.0))
