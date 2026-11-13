@@ -6,7 +6,7 @@ const WORLD: PackedScene = preload("uid://r3le8lu8wy1u")
 @onready var fade_rect: ColorRect = %Fade
 
 var world: Node2D
-var skip_start: bool = true
+var skip_start: bool = false
 
 
 func _ready() -> void:
