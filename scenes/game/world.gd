@@ -1,6 +1,6 @@
 extends Node2D
 
-const DAY_TIME: float = 30.0
+const DAY_TIME: float = 120.0
 const NIGHT_TIME: float = 60.0
 
 @onready var day_timer: Timer = %DayTimer

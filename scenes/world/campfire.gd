@@ -34,6 +34,10 @@ func _input(event: InputEvent) -> void:
 		toggle_fire(true)
 		fuel_timer.start()
 
+		if player_inside:
+			Game.is_player_in_safezone = true
+			Game.safe_zone_changed.emit()
+
 	place_sfx.play()
 
 	if not has_added_items:
@@ -61,10 +65,11 @@ func _on_area_body_entered(body: Node2D) -> void:
 		return
 
 	player_inside = true
-	Game.is_player_in_safezone = is_on
 	update_prompt()
 
-	Game.safe_zone_changed.emit()
+	if is_on:
+		Game.is_player_in_safezone = is_on
+		Game.safe_zone_changed.emit()
 
 
 func _on_area_body_exited(body: Node2D) -> void:
@@ -86,5 +91,9 @@ func _on_fuel_timer_timeout() -> void:
 		is_on = false
 		toggle_fire(false)
 		fuel_timer.stop()
+
+		if player_inside:
+			Game.is_player_in_safezone = is_on
+			Game.safe_zone_changed.emit()
 
 	update_prompt()

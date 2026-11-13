@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 			footstep_timer.paused = true
 
 	else:
-		footstep_timer.wait_time = 0.2 if is_sprinting else 0.4
+		footstep_timer.wait_time = 0.2 if is_sprinting and not is_exhausted else 0.4
 
 		if footstep_timer.paused:
 			footstep_timer.paused = false

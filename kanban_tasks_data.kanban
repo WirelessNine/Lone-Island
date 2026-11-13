@@ -24,6 +24,7 @@
 			"uuid": "18262224-b4ac-484c-a3ea-8a4f77343553",
 			"title": "Done",
 			"tasks": [
+				"abec423f-6363-4ad6-ae05-3787a88d9cbe",
 				"50937b29-49e0-4f55-a914-da2943bb8ef8",
 				"962307a4-a06b-40bb-8a52-56014c169b0b",
 				"026f177d-69f3-4f74-8f85-f16589095914",
@@ -182,6 +183,13 @@
 		{
 			"uuid": "0df47a1b-b442-4ae9-9977-0bdd223857b7",
 			"title": "Add title screen fade",
+			"description": "",
+			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
+			"steps": []
+		},
+		{
+			"uuid": "abec423f-6363-4ad6-ae05-3787a88d9cbe",
+			"title": "Small tweaks and bug fixes",
 			"description": "",
 			"category": "7a24b7dd-0de2-41dc-88a1-9713093cf842",
 			"steps": []

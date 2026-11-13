@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	return
 	if body is not Player2D:
 		return
 
