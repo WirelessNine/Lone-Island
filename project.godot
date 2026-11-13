@@ -13,7 +13,7 @@ config_version=5
 config/name="Lone Island"
 run/main_scene="uid://c8yfisodqx61p"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://38fulxt3ln6j"
 
 [autoload]
 
