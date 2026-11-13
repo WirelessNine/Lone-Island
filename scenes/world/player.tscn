@@ -127,7 +127,7 @@ editor_draw_drag_margin = true
 blend_mode = 2
 shadow_enabled = true
 texture = ExtResource("3_qhqgy")
-texture_scale = 2.0
+texture_scale = 1.5
 metadata/_edit_lock_ = true
 
 [node name="FootstepSFX" type="AudioStreamPlayer" parent="." unique_id=2001909185]

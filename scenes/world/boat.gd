@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var player_inside = true
+var player_inside = false
 var is_repaired: bool = false
 
 @onready var error_sfx: AudioStreamPlayer = %ErrorSFX

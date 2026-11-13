@@ -28,6 +28,8 @@ texture = ExtResource("1_8umcq")
 6:0/0/probability = 0.2
 7:0/0 = 0
 7:0/0/probability = 0.05
+6:1/0 = 0
+6:2/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ho8sq"]
 resource_name = "Items"

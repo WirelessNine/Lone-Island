@@ -1,17 +1,21 @@
 extends Node
 
-const WORLD: PackedScene = preload("uid://cynwuhlfs1dpj")
+const WORLD: PackedScene = preload("uid://r3le8lu8wy1u")
 
 @onready var title_screen: PanelContainer = %TitleScreen
 @onready var fade_rect: ColorRect = %Fade
 
 var world: Node2D
+var skip_start: bool = true
 
 
 func _ready() -> void:
 	Game.game_started.connect(_on_game_started)
 	Game.game_finished.connect(_on_game_finished)
 	Game.fade_requested.connect(_on_fade_requested)
+
+	if skip_start:
+		_on_game_started()
 
 
 func _on_game_started() -> void:

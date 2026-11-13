@@ -15,6 +15,10 @@ run/main_scene="uid://c8yfisodqx61p"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://bmbsi5s3soysa"
+
 [autoload]
 
 MenuManager="*uid://yt4k544va37f"
@@ -35,7 +39,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/audio_library/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/registry/plugin.cfg", "res://addons/scene_pool/plugin.cfg", "res://addons/ui_expansion/plugin.cfg")
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg", "res://addons/registry/plugin.cfg", "res://addons/scene_pool/plugin.cfg", "res://addons/ui_expansion/plugin.cfg")
 
 [file_customization]
 
